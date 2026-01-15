@@ -1,130 +1,133 @@
-AIChronicle: Intelligent News Analysis & Reporting System 📰🚀
+# 📰 AIChronicle — Intelligent News Analysis & Reporting System 🚀
 
-AIChronicle is a cutting-edge, full-stack application designed to revolutionize how we consume and analyze news. By bridging the gap between real-time data streams and generative AI, the system fetches live news from India, synthesizes professional multi-page PDF reports, and provides an interactive Chat interface (RAG) to query the report's content.
+AIChronicle is a **full-stack AI-powered news intelligence platform** designed to transform how news is consumed, analyzed, and explored.  
+It bridges **real-time Indian news data** with **generative AI**, producing **professional multi-page PDF reports** and enabling **context-aware Q&A** using Retrieval-Augmented Generation (RAG).
 
-🌟 Key Features
+---
 
-Real-time India News Integration: Fetches top headlines dynamically from India using the GNews API, covering Sports, Finance, Technology, and Politics.
+## 🌟 Key Features
 
-AI-Powered Synthesis: Utilizes the Google Gemini 2.5 Flash model to transform raw news data into high-quality, professional summaries.
+### 🗞️ Real-Time Indian News Integration
+- Fetches live top headlines from India using the **GNews API**
+- Covers **Sports, Finance, Technology, and Politics**
 
-Automated Document Engineering: Generates complex, multi-page PDF documents featuring:
+### 🤖 AI-Powered News Synthesis
+- Uses **Google Gemini 2.5 Flash** to convert raw news into:
+  - Clear summaries
+  - Deep analytical narratives
+  - Human-readable professional reports
 
-Dynamic Table of Contents (Clickable destinations).
+### 📄 Automated PDF Document Engineering
+Generates structured, multi-page PDF reports with:
+- Clickable **Table of Contents**
+- Topic-wise **chapters** (4–5 detailed paragraphs each)
+- Sub-topics with **bullet-point analysis**
+- Professional layout via **PDFKit**
 
-Structured Chapters with detailed elaborations (4-5 paragraphs per topic).
+### 💬 Interactive Contextual Q&A (RAG)
+- Implements **Retrieval-Augmented Generation**
+- Users can ask questions **only based on the generated PDF**
+- Ensures factual, hallucination-free responses
 
-Sub-topics and Bulleted Analysis.
+### 🖥️ Split-Screen Workspace
+- Chat interface on the left
+- Live PDF preview on the right
+- Smooth and responsive user experience
 
-Interactive Contextual Q&A (RAG): Implements Retrieval-Augmented Generation. Users can ask the AI specific questions about the generated PDF, and the assistant provides answers based only on the report's context.
+### 🔐 Secure Authentication & User Profiles
+- JWT-based authentication
+- Encrypted passwords with **bcrypt**
+- Persistent chat history
+- Profile photo uploads
 
-Split-Screen Workspace: A fluid UI that allows users to chat on the left while previewing the live PDF document on the right.
+### 🎨 Premium UI & UX
+- Modern **charcoal-themed design** (`rgb(33, 37, 41)`)
+- Smooth animations powered by **Framer Motion**
+- Clean, minimal, professional layout
 
-Secure Authentication & Profiles: A full JWT-based auth system with persistent chat history and customizable user profiles (photo uploads).
+---
 
-Premium Design: A modern charcoal-themed interface (rgb(33, 37, 41)) with smooth animations powered by Framer Motion.
+## 🛠️ Technical Architecture
 
-🛠️ Technical Architecture
+### Frontend (Client-Side)
+- **Framework:** React.js (Vite)
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Icons:** Lucide Icons / React Icons
+- **State Management:** React Hooks
+- **Persistence:** LocalStorage
 
-Frontend (Client-Side)
+### Backend (Server-Side)
+- **Runtime:** Node.js & Express
+- **Database:** PostgreSQL
+- **AI Engine:** Google Gemini SDK
+- **PDF Engine:** PDFKit
+- **Security:** JWT & BcryptJS
+- **File Handling:** Multer
 
-Framework: React.js (Vite)
+---
 
-Styling: Tailwind CSS (Custom Color Palettes)
-
-Animations: Framer Motion
-
-Icons: Lucide / React Icons (Fi)
-
-State Management: React Hooks (useState, useEffect) with persistent localStorage sync.
-
-Backend (Server-Side)
-
-Runtime: Node.js & Express
-
-Database: PostgreSQL (Relational storage for Users, Chats, and Messages)
-
-AI Engine: Google Generative AI (Gemini SDK)
-
-PDF Engine: PDFKit
-
-Security: JSON Web Tokens (JWT) & Bcryptjs (Password hashing)
-
-File Handling: Multer (Profile and PDF storage)
-
-📂 Project Hierarchy
+## 📂 Project Structure
 
 AIChronicle/
-├── backend/                        # Server-side Application
-│   ├── middleware/                 # Auth & Security logic
-│   ├── routes/                     # API (Chat, User, Photo routes)
-│   ├── uploads/                    # User Photos & Generated PDFs
-│   ├── .env                        # Private Keys (Gemini, GNews, JWT)
-│   ├── db.js                       # PostgreSQL Pool & Schema init
-│   └── server.js                   # Entry Point (Port 3001)
-├── client/                         # Frontend Application
-│   ├── src/
-│   │   ├── components/             # UI Components (Chat, Sidebar, PDFPreview)
-│   │   ├── assets/                 # Branding & Styles
-│   │   └── App.jsx                 # Routing & Modal logic
-│   └── vite.config.js              # Build configurations
-├── .gitignore                      # Git exclusion rules
-└── README.md                       # Documentation
+├── backend/
+├── client/
+├── .gitignore
+└── README.md
 
+---
 
-⚙️ Setup & Installation
+## ⚙️ Setup & Installation
 
-1. Prerequisites
+### Prerequisites
+- Node.js v18+
+- PostgreSQL
+- Google Gemini API Key
+- GNews API Key
 
-Node.js (v18+)
-
-PostgreSQL installed and running
-
-Google Gemini API Key
-
-GNews API Key
-
-2. Backend Installation
-
+### Backend Setup
+```bash
 cd backend
 npm install
+```
 
-
-Create a .env file in the backend folder:
-
+Create `.env` file:
+```env
 PORT=3001
 DATABASE_URL=postgres://user:password@localhost:5432/aichronicle
-JWT_SECRET=your_secret_key
-GEMINI_API_KEY=your_gemini_key
-GNEWS_API_KEY=your_gnews_key
+JWT_SECRET=your_jwt_secret
+GEMINI_API_KEY=your_gemini_api_key
+GNEWS_API_KEY=your_gnews_api_key
+```
 
-
-3. Frontend Installation
-
+### Frontend Setup
+```bash
 cd client
 npm install
+```
 
+---
 
-🚀 Execution Workflow
+## 🚀 Run Application
 
-Database: Ensure PostgreSQL is running. The server will auto-initialize tables on startup.
+```bash
+cd backend
+node server.js
+```
 
-Start Server: node server.js inside the backend directory.
+```bash
+cd client
+npm run dev
+```
 
-Start Client: npm run dev inside the client directory.
+---
 
-Flow: - Login/Sign-up to access persistent history.
+## 📜 License
 
-Ask for "Latest news in India".
+Developed for **Engineering Project Presentation – 2026**  
+© All rights reserved.
 
-Confirm PDF generation to trigger the PDFKit engine.
+---
 
-Interact with the "View News Report" button to split the screen.
-
-Ask: "What are the key financial insights in this report?" to experience RAG.
-
-📜 License
-
-Developed for Engineering Project Presentation 2026. All rights reserved.
-
-Technical Lead & Developer
+## 👨‍💻 Technical Lead & Developer
+**Jitendra Tulswani**
