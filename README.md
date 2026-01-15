@@ -67,7 +67,7 @@ Generates structured, multi-page PDF reports with:
 
 ---
 
-## 📂 Project Structure
+
 
 ## 📂 Project Structure
 
