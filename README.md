@@ -69,11 +69,25 @@ Generates structured, multi-page PDF reports with:
 
 ## 📂 Project Structure
 
+## 📂 Project Structure
+
+```text
 AIChronicle/
-├── backend/
-├── client/
-├── .gitignore
-└── README.md
+├── backend/                         # Server-side application
+│   ├── middleware/                  # Authentication & security
+│   ├── routes/                      # API routes (User, Chat, Uploads)
+│   ├── uploads/                     # Profile images & generated PDFs
+│   ├── .env                         # Environment variables
+│   ├── db.js                        # PostgreSQL pool & schema setup
+│   └── server.js                    # Backend entry point (Port 3001)
+├── client/                          # Frontend application
+│   ├── src/
+│   │   ├── components/              # Chat, Sidebar, PDF Preview
+│   │   ├── assets/                  # Branding & styles
+│   │   └── App.jsx                  # Routing & modal logic
+│   └── vite.config.js               # Vite configuration
+├── .gitignore                       # Git exclusions
+└── README.md                        # Project documentation
 
 ---
 
